@@ -1,0 +1,24 @@
+<template name="postItem">
+  <div class="post">
+     <a href="#" class="btn btn-mini upvote {{upvotedClass}}"><i class="icon-white icon-arrow-up"></i></a>
+    <div class="post-content">
+      
+      <div class="post-img">
+      <img src={{checkImage image.url meta.image.url}} class="imgArticle" />
+      </div>
+      <div class="post-text">
+      <h3><a href="{{link}}">{{title}}</a><span>{{date}}</span></h3>
+        <p> {{removeImgTag description}} </p>
+        <p> {{enclosures.0.url}} </p>
+        <span></span>
+        <p>
+        {{pluralize votes "Vote"}},
+     
+        <a href="{{postPagePath this}}">{{pluralize commentsCount "comment"}}</a>
+      </p>
+
+      </div>
+    </div>
+      <a href="{{postPagePath this}}" class="discuss btn">Discuss</a>
+  </div>
+</template>
